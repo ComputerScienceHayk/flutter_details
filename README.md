@@ -1,6 +1,6 @@
 # flutter_details
 
-A new Flutter application.
+![img alt](https://github.com/ComputerScienceHayk/flutter_details/blob/master/screengif.gif)
 
 ## Getting Started
 
