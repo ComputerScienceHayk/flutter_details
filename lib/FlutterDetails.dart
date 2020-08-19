@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 String img = "assets/images/alan.jpg";
-String aboutTuring = "https://www.turing.org.uk/publications/dnb.html";
+String alan = "Alan Turing";
+String bio = "biography";
+String text = "Alan Mathison Turing was born on 23 June 1912, the second and last child (after his brother John) of Julius Mathison and Ethel Sara Turing. The unusual name of Turing placed him in a distinctive family tree of English gentry, far from rich but determinedly upper-middle-class in the peculiar sense of the English class system. His father Julius had entered the Indian Civil Service, serving in the Madras Presidency, and had there met and married Ethel Sara Stoney. She was the daughter of the chief engineer of the Madras railways, who came from an Anglo-Irish family of somewhat similar social status. Although conceived in British India, most likely in the town of Chatrapur, Alan Turing was born in a nursing home in Paddington, London.";
 
 class FlutterDetails extends StatelessWidget {
 
@@ -29,7 +31,7 @@ class FlutterDetails extends StatelessWidget {
                   child: Stack(
                     children: <Widget>[
                       Positioned(
-                        top: 0,
+                        top: 20,
                         bottom: 20,
                         child: Image.asset(
                           img,
@@ -40,10 +42,10 @@ class FlutterDetails extends StatelessWidget {
                         right: 10,
                         bottom: 0,
                         child: CircleAvatar(
-                          backgroundColor: Colors.red,
+                          backgroundColor: Colors.white,
                           child: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
+                            Icons.info_outline,
+                            color: Colors.black,
                             size: 24,
                           ),
                         ),
@@ -102,20 +104,11 @@ class _DetailPageState extends State<DetailPage> {
                         horizontal: 15,
                       ),
                       child: Icon(
-                        Icons.arrow_back,
+                        Icons.arrow_back_ios,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: Icon(
-                      Icons.menu,
-                      color: Colors.white,
-                    ),
-                  )
                 ],
               ),
             ),
@@ -147,18 +140,9 @@ class _DetailPageState extends State<DetailPage> {
               vertical: 15,
               horizontal: 15,
             ),
-            child: WebviewScaffold(
-              url: aboutTuring,
-              withJavascript: true,
-              withLocalStorage: true,
-              withZoom: true,
-              clearCache: true,
-              appCacheEnabled: true,
-              initialChild: Container(
-                child: Center(
-                  child: Text("waiting"),
-                ),
-              ),
+            child: Container(
+              color: Colors.blue[50],
+              child: Text(text),
             )
           ),
         ],
@@ -173,8 +157,8 @@ class _DetailPageState extends State<DetailPage> {
         radius: 24,
         backgroundImage: AssetImage(img),
       ),
-      title: Text('siberian'),
-      subtitle: Text('owl'),
+      title: Text(alan),
+      subtitle: Text(bio),
       trailing: Icon(Icons.share),
     );
   }
@@ -226,14 +210,14 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Flutter',
+                    alan,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
                     ),
                   ),
                   Text(
-                    'owl',
+                    bio,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
